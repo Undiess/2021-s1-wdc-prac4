@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-lastVisit = ""
+var lastVisit;
 router.get('/last.txt', function(req,res){
   res.send(lastVisit)
    lastVisit = new Date
