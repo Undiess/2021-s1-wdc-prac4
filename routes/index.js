@@ -21,7 +21,7 @@ router.get('/last.txt', function (req, res) {
     
     </html>
     `)
-  lastVisit = new Date()
+  lastVisit = new Date().toString()
 })
 var colors = [
   "red","yellow","green","blue"
@@ -37,7 +37,7 @@ router.get('/color.html',function(req,res){
    </head>
    
    <body>
-   <h1 style="color:${colors[n]}">${colors[n]}<h1>
+   <h1 style="color:${colors[n]}">${colors[n]}</h1>
    
    </body>
    
