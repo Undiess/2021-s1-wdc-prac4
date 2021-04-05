@@ -7,7 +7,20 @@ router.get('/', function (req, res, next) {
 })
 let lastVisit
 router.get('/last.txt', function (req, res) {
-  res.send(lastVisit)
+  res.send(`<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <title>Express</title>
+      <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+    
+    <body>
+      <h1>${lastVisit}</h1>
+    
+    </body>
+    
+    </html>
+    `)
   lastVisit = new Date()
 })
 var colors = [
@@ -16,7 +29,20 @@ var colors = [
 var  index = 0;
 router.get('/color.html',function(req,res){
    var n = getcolor()
-   res.send(`<h1 style="color:${colors[n]}">${colors[n]}<h1>`)
+   res.send(`<!DOCTYPE html>
+   <html lang="en">
+   <head>
+     <title>Express</title>
+     <link rel="stylesheet" href="/stylesheets/style.css">
+   </head>
+   
+   <body>
+   <h1 style="color:${colors[n]}">${colors[n]}<h1>
+   
+   </body>
+   
+   </html>
+   `)
 })
 
 
